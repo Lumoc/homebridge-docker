@@ -1,4 +1,4 @@
-FROM node:8.4-stretch
+FROM node:8.9-stretch
 
 MAINTAINER Florian Fröhlich
 
