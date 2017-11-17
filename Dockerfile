@@ -1,6 +1,6 @@
 FROM node:8.4-stretch
 
-MAINTAINER Marco Raddatz
+MAINTAINER Florian Fröhlich
 
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive
@@ -12,13 +12,13 @@ RUN apt-get update; \
     apt-get install -y curl wget; \
     apt-get install -y libnss-mdns avahi-discover libavahi-compat-libdnssd-dev libkrb5-dev; \
     apt-get install -y ffmpeg; \
-    apt-get install -y nano vim
+    apt-get install -y nano vim htop avahi-daemon avahi-discover libnss-mdns libavahi-compat-libdnssd-dev curl wget git python build-essential make g++ libkrb5-dev vim net-tools nano
 
 # Install latest Homebridge
 # -------------------------------------------------------------------------
 # You can force a specific version by setting HOMEBRIDGE_VERSION
 # See https://github.com/marcoraddatz/homebridge-docker#homebridge_version
-RUN npm install -g homebridge --unsafe-perm
+#RUN npm install -g homebridge --unsafe-perm
 
 # Final settings
 COPY avahi-daemon.conf /etc/avahi/avahi-daemon.conf
