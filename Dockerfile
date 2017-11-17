@@ -5,6 +5,8 @@ MAINTAINER Florian Fröhlich
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm
+ENV TZ Europe/Berlin
+ENV HOMEBRIDGE_TZ Europe/Berlin
 
 # Install dependencies and tools
 RUN apt-get update; \
@@ -18,7 +20,10 @@ RUN apt-get update; \
 # -------------------------------------------------------------------------
 # You can force a specific version by setting HOMEBRIDGE_VERSION
 # See https://github.com/marcoraddatz/homebridge-docker#homebridge_version
-#RUN npm install -g homebridge --unsafe-perm
+RUN npm install -g homebridge --unsafe-perm
+RUN npm install -g homebridge-platform-lightify
+RUN npm install -g homebridge-hue
+RUN npm install -g homebridge-sonoff-tasmota-http
 
 # Final settings
 COPY avahi-daemon.conf /etc/avahi/avahi-daemon.conf
