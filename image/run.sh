@@ -76,5 +76,5 @@ then
             homebridge ;;
     esac
 else
-    parallel homebridge ::: "" "-U ~/.homebridge-hue"
+    parallel bash ::: "homebridge" "homebridge -U ~/.homebridge-hue"
 fi
