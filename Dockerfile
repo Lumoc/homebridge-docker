@@ -21,7 +21,7 @@ RUN apt-get update; \
 # You can force a specific version by setting HOMEBRIDGE_VERSION
 # See https://github.com/marcoraddatz/homebridge-docker#homebridge_version
 # RUN npm install -g homebridge --unsafe-perm
-RUN npm install -g https://github.com/NorthernMan54/homebridge --unsafe-perm
+RUN npm install -g https://github.com/lumoc/homebridge-alexa --unsafe-perm
 
 
 RUN npm install -g homebridge-platform-lightify
@@ -38,5 +38,5 @@ RUN mkdir -p /var/run/dbus
 ADD image/run.sh /root/run.sh
 
 # Run container
-EXPOSE 5353 51826
+EXPOSE 5353 51826 1900
 CMD ["/root/run.sh"]
