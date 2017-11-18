@@ -28,7 +28,7 @@ RUN npm install -g homebridge-platform-lightify
 RUN npm install -g homebridge-hue
 RUN npm install -g homebridge-sonoff-tasmota-http
 RUN npm install -g homebridge-platform-wemo
-RUN npm install -g homebridge-alexa
+RUN npm install -g homebridge-alexa --unsafe-perm
 
 # Final settings
 COPY avahi-daemon.conf /etc/avahi/avahi-daemon.conf
