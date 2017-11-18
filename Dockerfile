@@ -20,10 +20,14 @@ RUN apt-get update; \
 # -------------------------------------------------------------------------
 # You can force a specific version by setting HOMEBRIDGE_VERSION
 # See https://github.com/marcoraddatz/homebridge-docker#homebridge_version
-RUN npm install -g homebridge --unsafe-perm
+# RUN npm install -g homebridge --unsafe-perm
+RUN npm install -g https://github.com/NorthernMan54/homebridge
+
+
 RUN npm install -g homebridge-platform-lightify
 RUN npm install -g homebridge-hue
 RUN npm install -g homebridge-sonoff-tasmota-http
+RUN npm install -g homebridge-platform-wemo
 
 # Final settings
 COPY avahi-daemon.conf /etc/avahi/avahi-daemon.conf
