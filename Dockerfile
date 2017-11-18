@@ -16,6 +16,7 @@ RUN apt-get update; \
     apt-get install -y ffmpeg; \
     apt-get install -y nano vim htop avahi-daemon avahi-discover libnss-mdns libavahi-compat-libdnssd-dev curl wget git python build-essential make g++ libkrb5-dev vim net-tools nano
 
+USER root
 # Install latest Homebridge
 # -------------------------------------------------------------------------
 # You can force a specific version by setting HOMEBRIDGE_VERSION
