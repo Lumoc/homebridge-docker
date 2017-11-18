@@ -76,5 +76,5 @@ then
             homebridge ;;
     esac
 else
-    parallel ::: "homebridge" "homebridge -U ~/.homebridge-hue"
+    parallel --tag echo {} ::: "homebridge" "homebridge -U ~/.homebridge-hue"
 fi
