@@ -14,7 +14,8 @@ RUN apt-get update; \
     apt-get install -y curl wget; \
     apt-get install -y libnss-mdns avahi-discover libavahi-compat-libdnssd-dev libkrb5-dev; \
     apt-get install -y ffmpeg; \
-    apt-get install -y nano vim htop avahi-daemon avahi-discover libnss-mdns libavahi-compat-libdnssd-dev curl wget git python build-essential make g++ libkrb5-dev vim net-tools nano
+    apt-get install -y nano vim htop avahi-daemon avahi-discover libnss-mdns libavahi-compat-libdnssd-dev curl wget git python build-essential make g++ libkrb5-dev vim net-tools nano; \
+    apt-get install -y parallel
 
 USER root
 # Install latest Homebridge
