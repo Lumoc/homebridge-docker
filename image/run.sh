@@ -76,5 +76,5 @@ then
             homebridge ;;
     esac
 else
-    parallel --verbose ::: "homebridge" "homebridge -U ~/.homebridge-hue"
+    parallel --tmux ::: "homebridge" "homebridge -U ~/.homebridge-hue"
 fi
