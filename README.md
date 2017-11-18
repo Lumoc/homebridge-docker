@@ -1,21 +1,21 @@
-# Dockerized Homebridge
+# Dockerized Homebridge with Alexa support
 
-[![Docker Build Status](https://img.shields.io/docker/build/lumoc/homebridge-docker.svg)](https://hub.docker.com/r/lumoc/homebridge-docker/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/lumoc/homebridge-docker.svg)](https://hub.docker.com/r/lumoc/homebridge-docker/)
+[![Docker Build Status](https://img.shields.io/docker/build/lumoc/homebridge-docker-alexa.svg)](https://hub.docker.com/r/lumoc/homebridge-docker-alexa/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/lumoc/homebridge-docker-alexa.svg)](https://hub.docker.com/r/lumoc/homebridge-docker-alexa/)
 
-[This Docker image](https://hub.docker.com/r/lumoc/homebridge-docker/) helps you to easily setup [Homebridge](https://github.com/nfarina/homebridge) on your Synology, but also runs on QNAP devices or Raspberry Pies.
+[This Docker image](https://hub.docker.com/r/lumoc/homebridge-docker-alexa/) helps you to easily setup [Homebridge](https://github.com/nfarina/homebridge) on your Synology or other Docker Systems
 
 ## Installation (via Synology DSM)
 
 ### 1. Download Image
 
-First of all, login to your Synology DSM, open Docker and download `lumoc/homebridge-docker` from within the registry.
+First of all, login to your Synology DSM, open Docker and download `lumoc/homebridge-docker-alexa` from within the registry.
 
 ![Registry Overview.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-1.png)
 
 ### 2. Prepare your scripts
 
-Create a folder via DSM File Station at `/volume1/docker/homebridge` and put your `config.json` and **either** your `package.json` or `install.sh` (recommended) in there. If you'd like to develop an own plugin or debug Homebridge, also copy the `.env` file.
+Create a folder via DSM File Station at `/volume1/docker/homebridge` and `/volume1/docker/homebridge-hue` and put your `config.json` and **either** your `package.json` or `install.sh` (recommended) in the `/volume1/docker/homebridge` folder. If you'd like to develop an own plugin or debug Homebridge, also copy the `.env` file. In the second `/volume1/docker/homebridge-hue` folder put the `config.json` without support for Alexa. So it is possible to have native Hue equipment, third party equipment on Hue Bridge and third party plattforms in one container and on HomeKit and Alexa
 
 ![File Station.](https://raw.githubusercontent.com/lumoc/homebridge-docker/master/doc/file-station-1.png)
 
@@ -30,10 +30,6 @@ Here are two examples of how your setup files may look like:
   "version": "0.1.1",
   "license": "ISC",
   "dependencies": {
-    "homebridge-harmonyhub": "0.2.0-alpha",
-    "homebridge-netatmo": "^0.0.4",
-    "homebridge-nukiio": "^0.0.3",
-    "homebridge-synology": "^0.1.0"
   }
 }
 ```
@@ -63,7 +59,7 @@ Once the plugins have been set up, the Docker container is ready to launch.
 
 ![Link local configs.](https://raw.githubusercontent.com/lumoc/homebridge-docker/master/doc/docker-4.png)
 
-Link the `/volume1/docker/homebridge` to `/root/.homebridge`, otherwise, the configuration files won’t be loaded (within DSM the path is only shown as `/docker/homebridge`.
+Link the `/volume1/docker/homebridge` to `/root/.homebridge` and `/volume1/docker/homebridge-hue` to `/root/.homebridge-hue`, otherwise, the configuration files won’t be loaded (within DSM the path is only shown as `/docker/homebridge`.
 
 ![Use the same network as Docker host.](https://raw.githubusercontent.com/lumoc/homebridge-docker/master/doc/docker-5.png)
 
