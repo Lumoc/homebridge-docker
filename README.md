@@ -1,15 +1,15 @@
 # Dockerized Homebridge
 
-[![Docker Build Status](https://img.shields.io/docker/build/marcoraddatz/homebridge.svg)](https://hub.docker.com/r/marcoraddatz/homebridge/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/marcoraddatz/homebridge.svg)](https://hub.docker.com/r/marcoraddatz/homebridge/)
+[![Docker Build Status](https://img.shields.io/docker/build/lumoc/homebridge-docker.svg)](https://hub.docker.com/r/lumoc/homebridge-docker/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/lumoc/homebridge-docker.svg)](https://hub.docker.com/r/lumoc/homebridge-docker/)
 
-[This Docker image](https://hub.docker.com/r/marcoraddatz/homebridge/) helps you to easily setup [Homebridge](https://github.com/nfarina/homebridge) on your Synology, but also runs on QNAP devices or Raspberry Pies. If you're using a Synology, please make sure to run at least DSM 6, otherwise you [might have to go the harder way](https://marcoraddatz.com/en/2016/07/13/run-homebridge-on-a-synology/) via SSH/shell scripts.
+[This Docker image](https://hub.docker.com/r/lumoc/homebridge-docker/) helps you to easily setup [Homebridge](https://github.com/nfarina/homebridge) on your Synology, but also runs on QNAP devices or Raspberry Pies.
 
 ## Installation (via Synology DSM)
 
 ### 1. Download Image
 
-First of all, login to your Synology DSM, open Docker and download `marcoraddatz/homebridge` from within the registry.
+First of all, login to your Synology DSM, open Docker and download `lumoc/homebridge-docker` from within the registry.
 
 ![Registry Overview.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-1.png)
 
@@ -17,7 +17,7 @@ First of all, login to your Synology DSM, open Docker and download `marcoraddatz
 
 Create a folder via DSM File Station at `/volume1/docker/homebridge` and put your `config.json` and **either** your `package.json` or `install.sh` (recommended) in there. If you'd like to develop an own plugin or debug Homebridge, also copy the `.env` file.
 
-![File Station.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/file-station-1.png)
+![File Station.](https://raw.githubusercontent.com/lumoc/homebridge-docker/master/doc/file-station-1.png)
 
 Here are two examples of how your setup files may look like:
 
@@ -57,17 +57,17 @@ Since version 2.1 all commands get executed as root, so this is a good place to 
 
 Once the plugins have been set up, the Docker container is ready to launch.
 
-![Launch container.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-2.png)
+![Launch container.](https://raw.githubusercontent.com/lumoc/homebridge-docker/master/doc/docker-2.png)
 
-![Click 'Advanced Settings'.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-3.png)
+![Click 'Advanced Settings'.](https://raw.githubusercontent.com/lumoc/homebridge-docker/master/doc/docker-3.png)
 
-![Link local configs.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-4.png)
+![Link local configs.](https://raw.githubusercontent.com/lumoc/homebridge-docker/master/doc/docker-4.png)
 
 Link the `/volume1/docker/homebridge` to `/root/.homebridge`, otherwise, the configuration files won’t be loaded (within DSM the path is only shown as `/docker/homebridge`.
 
-![Use the same network as Docker host.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-5.png)
+![Use the same network as Docker host.](https://raw.githubusercontent.com/lumoc/homebridge-docker/master/doc/docker-5.png)
 
-![Apply settings.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-6.png)
+![Apply settings.](https://raw.githubusercontent.com/lumoc/homebridge-docker/master/doc/docker-6.png)
 
 Once you launch (or restart) the container, Homebridge and all its dependencies will get installed. To verify that Homebridge is running or if an error occurs, you can use the container's log (Container → Details → Log) to receive further information on the process.
 
@@ -132,7 +132,7 @@ If you're using a non-Synology device, you might need to adjust the paths to you
 
 ### 7. Search the GitHub issues
 
-Before opening a new [issue on GitHub](https://github.com/marcoraddatz/homebridge-docker/issues), please use the search function to avoid duplicates.
+Before opening a new [issue on GitHub](https://github.com/lumoc/homebridge-docker/issues), please use the search function to avoid duplicates.
 
 ## License
 
