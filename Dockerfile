@@ -26,10 +26,10 @@ USER root
 RUN npm install -g https://github.com/lumoc/homebridge-alexa --unsafe-perm
 
 
-RUN npm install -g homebridge-platform-lightify
+#RUN npm install -g homebridge-platform-lightify
 RUN npm install -g homebridge-hue
 RUN npm install -g homebridge-sonoff-tasmota-http
-RUN npm install -g homebridge-platform-wemo
+#RUN npm install -g homebridge-platform-wemo
 RUN npm install -g homebridge-alexa --unsafe-perm
 
 # Final settings
