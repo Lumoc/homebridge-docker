@@ -21,8 +21,8 @@ RUN apt-get update; \
 # You can force a specific version by setting HOMEBRIDGE_VERSION
 # See https://github.com/marcoraddatz/homebridge-docker#homebridge_version
 RUN npm install -g homebridge --unsafe-perm
-RUN npm install -g homebridge-platform-lightify
-RUN npm install -g homebridge-hue
+#RUN npm install -g homebridge-platform-lightify
+RUN npm install -g https://github.com/Lumoc/homebridge-hue.git
 RUN npm install -g homebridge-sonoff-tasmota-http
 
 # Final settings
