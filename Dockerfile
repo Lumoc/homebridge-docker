@@ -27,7 +27,7 @@ RUN npm install -g https://github.com/lumoc/homebridge-alexa --unsafe-perm
 
 
 #RUN npm install -g homebridge-platform-lightify
-RUN npm install -g homebridge-hue
+RUN npm install -g https://github.com/Lumoc/homebridge-hue.git
 RUN npm install -g homebridge-sonoff-tasmota-http
 #RUN npm install -g homebridge-platform-wemo
 #RUN npm install -g homebridge-alexa --unsafe-perm
@@ -41,5 +41,5 @@ RUN mkdir -p /var/run/dbus
 ADD image/run.sh /root/run.sh
 
 # Run container
-EXPOSE 5353 51826 1900
+EXPOSE 5353 51826 51827 1900
 CMD ["/root/run.sh"]
