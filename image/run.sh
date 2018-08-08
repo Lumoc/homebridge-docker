@@ -76,6 +76,6 @@ then
             homebridge ;;
     esac
 else
-    homebridge &
+    homebridge -I &
     homebridge -U ~/.homebridge-hue 
 fi
